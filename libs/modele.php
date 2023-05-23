@@ -29,7 +29,8 @@ function obtenirStock() {
 
 function obtenirVente() {
 	$SQL = "SELECT *
-			FROM Ventes";
+			FROM Stock
+			WHERE Sales = 1";
 	return ParcoursRs(SQLSelect($SQL));
 }
 
@@ -46,16 +47,16 @@ function obtenirBilanTotal() {
 	return $var1 . $var2 . $var3;
 }
 function obtenirBeneficeTotal() {
-	$SQL = "SELECT (SUM(v.Resale_price)-SUM(s.Retail_price))
+	$SQL = "SELECT (SUM(s.Resale_price)-SUM(s.Retail_price))
 			FROM Stock AS s
-			JOIN Sales AS v
-			ON s.Idshoes = v.Idshoes";
+			WHERE Resale_price != 0";
 	return SQLGetChamp($SQL);
 }
 
 function obtenirNbVente() {
 	$SQL = "SELECT COUNT(*)
-			FROM Sales";
+			FROM Stock
+			WHERE Sales = 1";
 	return SQLGetChamp($SQL);
 }
 
@@ -65,31 +66,29 @@ function obtenirNbStock() {
 	return SQLGetChamp($SQL);
 }
 
-function obtenirBilanAnnee($date) {
-	$var1 = obtenirBeneficeAnnee($date);
-	$var2 = obtenirNbVenteAnnee($date);
-	$var3 = obtenirNbStockAnnee($date);
+function obtenirBilanSpec($date) {
+	$var1 = obtenirBeneficeSpec($date);
+	$var2 = obtenirNbVenteSpec($date);
+	$var3 = obtenirNbStockSpec($date);
 	return $var1 . $var2 . $var3;
 }
 
 
-function obtenirBeneficeAnnee($date) {
+function obtenirBeneficeSpec($date) {
 	$SQL = "SELECT (SUM(v.Resale_price)-SUM(s.Retail_price))
 			FROM Stock AS s
-			JOIN Sales AS v
-			ON s.Idshoes = v.Idshoes
-			WHERE s.Resale_date>'$date' AND s.Retail_date>'$date'";
+			WHERE s.Resale_date>'$date' AND s.Retail_date>'$date' AND Resale_price != 0";
 	return SQLGetChamp($SQL);
 }
 
-function obtenirNbVenteAnnee($date) {
+function obtenirNbVenteSpec($date) {
 	$SQL = "SELECT COUNT(*)
-			FROM Sales
-			WHERE Resale_date>'$date'";
+			FROM Stock
+			WHERE Resale_date>'$date' AND Sales = 1";
 	return SQLGetChamp($SQL);
 }
 
-function obtenirNbStockAnnee($date) {
+function obtenirNbStockSpec($date) {
 	$SQL = "SELECT COUNT(*)
 			FROM Stock
 			WHERE Retail_date>'$date'";
