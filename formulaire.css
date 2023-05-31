@@ -1,0 +1,61 @@
+body
+{
+	background-color: lightgrey;
+}
+
+h1
+{
+	font-size: 20pt;
+}
+
+.gauche
+{
+	width: 40%;
+	float: left;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.droite
+{
+	width: 40%;
+	float: right;
+	margin-top: 50px;
+}
+
+.titre1
+{
+	text-align: center;
+}
+
+.input1
+{
+	display: inline;
+	margin: 10px;
+	width: 350px;
+	text-align: center;
+}
+
+
+.input2
+{
+	display: inline;
+	margin: 10px;
+	width: 350px;
+	text-align: center;
+	font-size: 10pt;
+}
+
+.input2bis
+{
+	display: inline;
+	margin: 50px 10px 10px 10px;
+	width: 350px;
+	text-align: center;
+}
+
+img
+{
+	width: 180px;
+	height: auto;
+}
