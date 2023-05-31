@@ -29,15 +29,17 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 	<div class="gauche">
 		<h1 class="title">Dashboard</h1>
 		<div class="conteneur_menu">
-		<a href="index.php?view=stock" class="bulle" id="stock">Stock</a>
+		<a href="index.php?view=stock" style="text-decoration:none" class="bulle" id="stock">Stock</a>
 		<br>
-		<a href="index.php?view=ventes" class="bulle" id="stock">Ventes</a>
+		<a href="index.php?view=ventes" style="text-decoration:none" class="bulle" id="ventes">Ventes</a>
 		<br>
-		<a href="index.php?view=client" class="bulle" id="stock">Client</a>
+		<a href="index.php?view=client" style="text-decoration:none" class="bulle" id="client">Client</a>
 		<br>
-		<a href="index.php?view=form" class="bulle" id="stock">Formulaire</a>
+		<a href="index.php?view=bilan" style="text-decoration:none" class="bulle" id="bilan">Bilan</a>
 		<br>
-		<a href="index.php?view=expl" class="bulle" id="stock">Explications du SQL</a>
+		<a href="index.php?view=form" style="text-decoration:none" class="bulle" id="formulaire">Formulaire</a>
+		<br>
+		<a href="index.php?view=expl" style="text-decoration:none" class="bulle" id="explication">Explications du SQL</a>
 		</div>
 	</div>
 </body>

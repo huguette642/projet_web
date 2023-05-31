@@ -20,9 +20,9 @@ include_once("libs/maLibForms.php");// mkTable, mkLiens, mkSelect ...
 ?>
 
 <div id="affichage_stock">
-<h1 class="titre">Stock</h1>
+<h1 class="titre">Ventes</h1>
 <?php
-  $stock = obtenirStock();
+  $stock = obtenirVente();
   $nb=0;
   echo '<div class="conteneur">';
   foreach($stock as $nextstock){
@@ -40,10 +40,11 @@ include_once("libs/maLibForms.php");// mkTable, mkLiens, mkSelect ...
     echo '<p>Id chaussure : ' . $nextstock["Idshoes"] . '</p>';
     echo '<p>Nom : ' . $nextstock["Name"] . '</p>';
     echo '<p>Taille : ' . $nextstock["Size"] .  '</p>';
-    echo '<p>Retail Price : ' . $nextstock["Retail_price"] .  '</p>';
-    echo '<p>Retail Date : ' . $nextstock["Retail_date"] .  '</p>';
+    echo '<p>Resale Price : ' . $nextstock["Resale_price"] .  '</p>';
+    echo '<p>Resale Date : ' . $nextstock["Resale_date"] .  '</p>';
+    echo '<p>Resale Time : ' . $nextstock["Resale_time"] .  '</p>';
     mkForm("controleur.php");
-    mkInput('button','vendre','','class=boutonv');
+    mkInput('button','facture','','class=boutonvio');
     mkInput('button','modifier','','class=boutono');
     mkInput('button','supprimer','','class=boutonr');
     endForm();

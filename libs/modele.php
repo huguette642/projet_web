@@ -30,7 +30,7 @@ function obtenirStock() {
 function obtenirVente() {
 	$SQL = "SELECT *
 			FROM Stock
-			WHERE Sales = 1";
+			WHERE Sale = 1";
 	return ParcoursRs(SQLSelect($SQL));
 }
 
@@ -56,7 +56,7 @@ function obtenirBeneficeTotal() {
 function obtenirNbVente() {
 	$SQL = "SELECT COUNT(*)
 			FROM Stock
-			WHERE Sales = 1";
+			WHERE Sale = 1";
 	return SQLGetChamp($SQL);
 }
 
@@ -84,7 +84,7 @@ function obtenirBeneficeSpec($date) {
 function obtenirNbVenteSpec($date) {
 	$SQL = "SELECT COUNT(*)
 			FROM Stock
-			WHERE Resale_date>'$date' AND Sales = 1";
+			WHERE Resale_date>'$date' AND Sale = 1";
 	return SQLGetChamp($SQL);
 }
 
@@ -95,5 +95,10 @@ function obtenirNbStockSpec($date) {
 	return SQLGetChamp($SQL);
 }
 
+function insertStock($nom,$size,$prix,$date) {
+	$SQL = "INSERT INTO Stock(Name,Size,Retail_price,Retail_date)
+			VALUES('$nom','$size','$prix','$date')";
+	return SQLInsert($SQL);
+}
 
 ?>

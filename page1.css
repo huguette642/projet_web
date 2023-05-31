@@ -6,7 +6,7 @@
 }
 #affichage_stock
 {
-	display: none;
+	display: block;
 }
 #stock
 		{
@@ -56,23 +56,40 @@
 .gauche
 {
 	float: left;
-	background-color: lightgrey;
+	background: linear-gradient(to right,black,#181a72);
 	display: block;
     flex-direction: row;
     min-height: 100vh;
-    margin: -10px;
+    margin: -10px 10px -20px -10px;
     width: 21%;
     padding: 5px;
+	color : lightgray;
 }
 
 .bulle
 {
-	border: 2px solid black;
-	margin: 5px;
-	padding: 10px;
+	border: 2px solid lightgray;
+	margin-left : -10px;
+	padding: 30px;
 	text-align: center;
 	border-radius: 50px;
+	font-size : 25px;
+	width : 100%;
+	box-sizing : border-box;
+	font-style: italic;
+	color : lightgray;
 }
+
+.bulle:hover {
+	background-color : lightgray;
+	color : #181a72;
+	box-shadow : 0px 0px lightgray;
+}
+
+.bulle:active {
+	transform : translate(0,5px);
+}
+
 
 .droite
 {
@@ -85,6 +102,13 @@
     width: 80%;
 }
 
+.titre {
+	color : white;
+	text-align : center;
+	padding : 10px;
+	margin-top : -10px;
+	font-size : 50px;
+}
 
 
 img
@@ -159,8 +183,17 @@ img
 
 .conteneur {
     display: flex;
-    justify-content: space-between;
     margin: 20px;
+	padding-bottom : 50px;
+}
+
+.conteneur_menu {
+	display : inline-flex;
+	justify-content : sppace-between;
+	margin : 20px;
+	flex-direction : column;
+	box-sizing : border-box;
+	width : 90%;
 }
 
 .sec1 {
@@ -175,10 +208,11 @@ img
 .sec2 {
     /* Styles spécifiques à la deuxième div */
     margin-right: auto;
-    border: 2px solid black;
+    border: 2px solid lightgray;
     border-radius: 10px;
     width: 235px;
     text-align: center;
+	color : lightgray;
 
 }
 
@@ -194,7 +228,7 @@ img
 .div1
 {
 	text-align: center;
-	border-bottom : 2px black solid;
+	border-bottom : 2px lightgray solid;
 }
 
 .div2
@@ -391,4 +425,12 @@ img
 	background-color: red;
 	border: 2px #850606 solid;
 	display: inline-block;
+}
+
+.boutonvio {
+	width : 30px;
+	height : 20px;
+	background-color : #BA55D3;
+	border : 2px #9932CC solid;
+	display : inline-block;
 }
