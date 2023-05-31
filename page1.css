@@ -1,0 +1,394 @@
+/*affichage differents et bulles*/
+
+#affichage_index
+{
+	display: block;
+}
+#affichage_stock
+{
+	display: none;
+}
+#stock
+		{
+			cursor: pointer;
+		}
+		#affichage_ventes
+		{
+			display: none;
+		}
+		#ventes
+		{
+			cursor: pointer;
+		}
+		#affichage_client
+		{
+			display: none;
+		}
+		#client
+		{
+			cursor: pointer;
+		}
+		#affichage_bilan
+		{
+			display: none;
+		}
+		#bilan
+		{
+			cursor: pointer;
+		}
+		#affichage_formulaire
+		{
+			display: none;
+		}
+		#formulaire
+		{
+			cursor: pointer;
+		}
+		#affichage_explication
+		{
+			display: none;
+		}
+		#explication
+		{
+			cursor: pointer;
+		}
+
+.gauche
+{
+	float: left;
+	background-color: lightgrey;
+	display: block;
+    flex-direction: row;
+    min-height: 100vh;
+    margin: -10px;
+    width: 21%;
+    padding: 5px;
+}
+
+.bulle
+{
+	border: 2px solid black;
+	margin: 5px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 50px;
+}
+
+.droite
+{
+	float: right;
+	background-color: grey;
+	display: block;
+    flex-direction: row;
+    min-height: 100vh;
+    margin: -10px;
+    width: 80%;
+}
+
+
+
+img
+{
+	max-width: 200px;
+	max-height: 200px;
+}
+
+/*Affichage Index des miniatures*/
+#index_titre
+{
+	display: block;
+	margin: 0 0 5px 0;
+	text-align: center;
+}
+
+#index_titre1
+{
+	display: block;
+	margin: 0;
+	text-align: center;
+}
+
+.miniature_stock
+{
+	display: inline-block;
+	margin: 20px 20px 0px 100px;
+}
+
+.miniature_ventes
+{
+	float: right;
+	margin: 20px 100px 0px 20px;
+}
+
+.miniature_client
+{
+	display: block;
+	text-align: center;
+}
+
+.miniature_bilan
+{
+	float: left;
+	margin: 0px 20px 20px 100px;
+	z-index: 1;
+	position: relative;
+}
+
+.miniature_miniature_bilan
+{
+	float: left;
+	margin-left: 180px;
+	margin-top: 80px;
+	position: fixed;
+	z-index: 1;
+}
+
+.img_miniature_menu_bilan
+{
+	max-width: 100px;
+	max-height: 100px;
+	z-index: 3;
+}
+
+.miniature_formulaire
+{
+	float: right;
+	margin: 0px 100px 20px 20px;
+}
+
+
+.conteneur {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.sec1 {
+    /* Styles spécifiques à la première div */
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 235px;
+    margin: auto;
+    text-align: center;
+}
+
+.sec2 {
+    /* Styles spécifiques à la deuxième div */
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 235px;
+    text-align: center;
+
+}
+
+.sec3 {
+    /* Styles spécifiques à la troisième div */
+    margin-left: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 235px;
+    text-align: center;
+}
+
+.div1
+{
+	text-align: center;
+	border-bottom : 2px black solid;
+}
+
+.div2
+{
+	display: inline-block;
+}
+
+
+#affichage_ventes_stock {
+  position: absolute;
+  top: 50%;
+  right: 0; /* Début à droite */
+  transform: translateY(-50%);
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+  display: none;
+  z-index: 9999;
+  animation: slideInFromRight 1s ease-in-out forwards; /* Animation ajoutée */
+  background-color: black;
+  opacity: 80%;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    right: 100%; /* Début à droite */
+  }
+  100% {
+    right: 30%; /* Arrêt au milieu */
+  }
+  }
+
+
+.valider_ventes_stock
+{
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.nom_paire_affichage_ventes_stock
+{
+	margin: 10px;
+	border-radius: 10px;
+	color: white;
+}
+
+
+
+#affichage_ventes_stock > h1
+{
+	color: white;
+}
+
+#affichage_ventes_stock > p
+{
+	color: white;
+	display: inline;
+}
+
+#affichage_modifier_stock {
+  position: absolute;
+  top: 50%;
+  right: 0; /* Début à droite */
+  transform: translateY(-50%);
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+  display: none;
+  z-index: 9999;
+  animation: slideInFromRight 1s ease-in-out forwards; /* Animation ajoutée */
+  background-color: black;
+  opacity: 80%;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    right: 100%; /* Début à droite */
+  }
+  100% {
+    right: 30%; /* Arrêt au milieu */
+  }
+  }
+
+
+.valider_modifier_stock
+{
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.nom_paire_affichage_modifier_stock
+{
+	margin: 10px;
+	border-radius: 10px;
+	color: white;
+}
+
+#affichage_modifier_stock > h1
+{
+	color: white;
+}
+
+#affichage_modifier_stock > p
+{
+	color: white;
+	display: inline;
+}
+
+
+#affichage_supp_stock {
+  position: absolute;
+  top: 50%;
+  right: 0; /* Début à droite */
+  transform: translateY(-50%);
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+  display: none;
+  z-index: 9999;
+  animation: slideInFromRight 1s ease-in-out forwards; /* Animation ajoutée */
+  background-color: black;
+  opacity: 80%;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    right: 100%; /* Début à droite */
+  }
+  100% {
+    right: 30%; /* Arrêt au milieu */
+  }
+  }
+
+
+.valider_supp_stock
+{
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.nom_paire_affichage_supp_stock
+{
+	margin: 10px;
+	border-radius: 10px;
+	color: white;
+}
+
+
+
+#affichage_supp_stock > h1
+{
+	color: white;
+}
+
+#affichage_supp_stock > p
+{
+	color: white;
+	display: inline;
+}
+
+
+.boutong
+{
+	margin: 5px 0 10px 10px;
+	float: left;
+}
+
+.boutonv
+{
+	width: 30px;
+	height: 20px;
+	background-color: lightgreen;
+	border: 2px green solid;
+	display: inline-block;
+
+}
+
+.boutono
+{
+	width: 30px;
+	height: 20px;
+	background-color: orange;
+	border: 2px #D6570B solid;
+	display: inline-block;
+}
+
+.boutonr
+{
+	width: 30px;
+	height: 20px;
+	background-color: red;
+	border: 2px #850606 solid;
+	display: inline-block;
+}
