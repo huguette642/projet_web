@@ -34,19 +34,18 @@ include_once("libs/maLibForms.php");// mkTable, mkLiens, mkSelect ...
     }
     echo '<div class="sec2">';
     echo '<div class="div1">';
-    echo '<img class="img1" src="./interface_photo/10.1-Bilan_Mois.png">';
+    echo '<img class="img1" src="./img_paires/image">';
     echo '</div>';
     echo '<div class="div2">';
     echo '<p>Id chaussure : ' . $nextstock["Idshoes"] . '</p>';
     echo '<p>Nom : ' . $nextstock["Name"] . '</p>';
     echo '<p>Taille : ' . $nextstock["Size"] .  '</p>';
+    echo '<p>Client : ' . $nextstock["Customer"] . '</p>';
     echo '<p>Resale Price : ' . $nextstock["Resale_price"] .  '</p>';
     echo '<p>Resale Date : ' . $nextstock["Resale_date"] .  '</p>';
-    echo '<p>Resale Time : ' . $nextstock["Resale_time"] .  '</p>';
     mkForm("controleur.php");
-    mkInput('button','facture','','class=boutonvio');
-    mkInput('button','modifier','','class=boutono');
-    mkInput('button','supprimer','','class=boutonr');
+    echo '<a href="index.php?view=form_modif_vente" style="text-decoration:none" class="boutono"></a>';
+    echo '<a href="index.php?view=form_suppr_vente" style="text-decoration:none" class="boutonr"></a>';
     endForm();
     echo '</div>';
     echo '</div>';

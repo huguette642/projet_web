@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="page1.css" />
+    <script src="page1.js"></script>
+	<title>shoes'ig2i</title>
+</head>
+<body>
+
 <?php
 session_start();
 
@@ -38,28 +48,15 @@ Les formulaires de toutes les vues générées enverront leurs données vers la 
 	switch($view)
 	{		
 
-		case "intro" : 
-			case "accueil" : 
-			case "presentation" : 
-				include("templates/accueil.php");
-			break;
-	
-			case "stock" : 
-				include("Templates/stock.php");
-			break;
-
-
-
 		default : // si le template correspondant à l'argument existe, on l'affiche
 			if (file_exists("Templates/$view.php"))
 				include("Templates/$view.php");
+			else
+			include("Templates/stock.php");
 
 	}
 
-
-	
-?>
-
+		?>
 
 
 

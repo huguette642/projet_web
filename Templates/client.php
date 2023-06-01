@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
+  <meta charset="utf-8" />
     <link rel="stylesheet" href="page1.css" />
 </head>
 <body style="background: repeating-radial-gradient(circle at 150%,white 20%, #181A72,#181A72);">
@@ -21,23 +21,28 @@ include_once("libs/maLibForms.php");// mkTable, mkLiens, mkSelect ...
 
 <div id="affichage_clients">
 <h1 class="titre">Clients</h1>
+
+
 <?php
-  $client = obtenirClient();
-  echo '<div class="conteneurclient">';
-  foreach($client as $nextclient){
-    echo '<div class="sec2">';
-    echo '<div class="div1">';
-    echo '</div>';
-    echo '<div class="div2">';
-    echo '<p>Nom : ' . $nextclient["Name"] . '</p>';
-    echo '<p>Frais acheteur : ' . $nextclient["Buyer_expense"] .  '</p>';
-    echo '<p>Frais vendeur : ' . $nextclient["Seller_expense"] .  '</p>';
-    echo '<a href="' . $nextclient["Link"] .  '">Lien boutique ' . $nextclient["Name"] . '</p>';
-    echo '</div>';
-    echo '</div>';
-  }
+$clients = obtenirClient();
+
+foreach($clients as $nextclient) {
+  echo '<div class="unclient">';
+    echo '<img class=" imgc" src="./img_paires/image">';
+    echo '<div class="centre">';
+    echo '<p class="inline">' . $nextclient["Name"] . '</p>';
+    
+    echo '<p class="inline milieu">Frais acheteur : ' . $nextclient["Buyer_expense"] . '%</p>';
+    echo '<p class="inline milieu2">Frias vendeur : ' . $nextclient["Seller_expense"] . '%</p>';
   echo '</div>';
+  echo '<a href="' . $nextclient["Link"] . '" class="inline droite">Lien du site : ' . $nextclient["Link"] . '</a>';
+  echo '</div>';
+  echo '<br>';
+}
 ?>
+
+
+</div>
 </body>
 
 </html>

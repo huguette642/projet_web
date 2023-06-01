@@ -132,7 +132,7 @@ function mkSelect($nomChampSelect, $tabData,$champValue, $champLabel,$selected=f
 function mkForm($action="",$method="get")
 {
 	// Produit une balise de formulaire NB : penser à la balise fermante !!
-	echo "<form action=\"$action\" method=\"$method\" >\n";
+	echo "<form action=\"$action\" method=\"$method\" enctype=\"multipart/form-data\" >\n";
 }
 function endForm()
 {

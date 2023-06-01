@@ -36,7 +36,8 @@ function obtenirVente() {
 
 function obtenirClient() {
 	$SQL = "SELECT *
-			FROM Customer";
+			FROM Customer
+			ORDER BY Name";
 	return parcoursRs(SQLSelect($SQL));
 }
 
@@ -44,12 +45,12 @@ function obtenirBilanTotal() {
 	$var1 = obtenirBeneficeTotal();
 	$var2 = obtenirNbVente();
 	$var3 = obtenirNbStock();
-	return $var1 . $var2 . $var3;
+	return array($var1,$var2,$var3);
 }
 function obtenirBeneficeTotal() {
 	$SQL = "SELECT (SUM(s.Resale_price)-SUM(s.Retail_price))
 			FROM Stock AS s
-			WHERE Resale_price != 0";
+			WHERE Resale_price != 0 AND Sale = 1";
 	return SQLGetChamp($SQL);
 }
 
@@ -70,14 +71,14 @@ function obtenirBilanSpec($date) {
 	$var1 = obtenirBeneficeSpec($date);
 	$var2 = obtenirNbVenteSpec($date);
 	$var3 = obtenirNbStockSpec($date);
-	return $var1 . $var2 . $var3;
+	return array($var1,$var2,$var3);
 }
 
 
 function obtenirBeneficeSpec($date) {
-	$SQL = "SELECT (SUM(v.Resale_price)-SUM(s.Retail_price))
+	$SQL = "SELECT (SUM(Resale_price)-SUM(s.Retail_price))
 			FROM Stock AS s
-			WHERE s.Resale_date>'$date' AND s.Retail_date>'$date' AND Resale_price != 0";
+			WHERE s.Resale_date>'$date' AND s.Retail_date>'$date' AND Resale_price != 0 AND Sale = 1";
 	return SQLGetChamp($SQL);
 }
 
@@ -96,9 +97,71 @@ function obtenirNbStockSpec($date) {
 }
 
 function insertStock($nom,$size,$prix,$date) {
-	$SQL = "INSERT INTO Stock(Name,Size,Retail_price,Retail_date)
-			VALUES('$nom','$size','$prix','$date')";
+	$SQL = "INSERT INTO Stock(Name,Size,Retail_price,Retail_date,Sale)
+			VALUES('$nom','$size','$prix','$date',0)";
 	return SQLInsert($SQL);
+}
+
+function Modifstock($id,$size,$retail_price,$retail_date) {
+	$SQL = "UPDATE Stock
+			SET Size='$size',
+			Retail_price='$retail_price',
+			Retail_date='$retail_date'
+			WHERE Idshoes='$id'";
+	return SQLUpdate($SQL);
+}
+
+function Vendre($id,$prix,$date,$client) {
+	$SQL = "UPDATE Stock
+			SET Resale_price='$prix',
+			Resale_date='$date',
+			Customer='$client',
+			Sale=1
+			WHERE Idshoes='$id'";
+	return SQLUpdate($SQL);
+}
+
+function SupprStock($id) {
+	$SQL = "DELETE FROM Stock
+			WHERE Idshoes = $id";
+	return SQLDelete($SQL);
+}
+
+function AjoutClient($nom,$fraisa,$fraisv,$lien){
+	$SQL = "INSERT INTO Customer VALUES('$nom','$fraisv','$fraisa','$lien')";
+	return SQLInsert($SQL);
+}
+
+function ModifClient($nom,$newnom,$fraisv,$fraisa,$lien){
+	$SQL = "UPDATE Customer
+			SET Name = \"'$newnom'\",
+			Seller_expense = '$fraisv',
+			Buyer_expense = '$fraisa',
+			Link = \"'$lien'\"
+			WHERE Name = \"'$nom'\"";
+	return SQLUpdate($SQL);
+}
+
+function SupprClient($nom){
+	$SQL = "DELETE FROM Customer
+			WHERE Name = '$nom'";
+	return SQLDelete($SQL);
+}
+
+function ModifVente($id,$prix,$date,$client){
+	$SQL = "UPDATE Stock
+			SET Resale_price = '$prix',
+			Resale_date = '$date',
+			Customer = '$client'
+			WHERE Idshoes = '$id'";
+	return SQLUpdate($SQL);
+}
+
+function AnnulVente($id){
+	$SQL = "UPDATE Stock
+			SET Sale = 0
+			WHERE Idshoes = '$id'";
+	return SQLUpdate($SQL);
 }
 
 ?>

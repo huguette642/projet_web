@@ -34,7 +34,7 @@ include_once("libs/maLibForms.php");// mkTable, mkLiens, mkSelect ...
     }
     echo '<div class="sec2">';
     echo '<div class="div1">';
-    echo '<img class="img1" src="./interface_photo/10.1-Bilan_Mois.png">';
+    echo '<img class="img1" src="./img_paires/image">';
     echo '</div>';
     echo '<div class="div2">';
     echo '<p>Id chaussure : ' . $nextstock["Idshoes"] . '</p>';
@@ -42,9 +42,9 @@ include_once("libs/maLibForms.php");// mkTable, mkLiens, mkSelect ...
     echo '<p>Taille : ' . $nextstock["Size"] .  '</p>';
     echo '<p>Retail Price : ' . $nextstock["Retail_price"] .  '</p>';
     echo '<p>Retail Date : ' . $nextstock["Retail_date"] .  '</p>';
-    echo '<a href="index.php?view=form" style="text-decoration:none" class="boutonv"></a>';
-    echo '<a href="index.php?view=form" style="text-decoration:none" class="boutono"></a>';
-    echo '<a href="index.php?view=form" style="text-decoration:none" class="boutonr"></a>';
+    echo '<a href="index.php?view=form_ajout_vente" style="text-decoration:none" class="boutonv"></a>';
+    echo '<a href="index.php?view=form_modif_stock" style="text-decoration:none" class="boutono"></a>';
+    echo '<a href="index.php?view=form_suppr_stock" style="text-decoration:none" class="boutonr"></a>';
     echo '</div>';
     echo '</div>';
     $nb+=1;

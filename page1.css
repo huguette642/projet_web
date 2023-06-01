@@ -55,12 +55,13 @@
 
 .gauche
 {
+	position : fixed;
 	float: left;
 	background: linear-gradient(to right,black,#181a72);
 	display: block;
     flex-direction: row;
     min-height: 100vh;
-    margin: -10px 10px -20px -10px;
+    margin: -10px 10px -100% -10px;
     width: 21%;
     padding: 5px;
 	color : lightgray;
@@ -81,6 +82,11 @@
 	color : lightgray;
 }
 
+.headerr
+{
+	margin-right: -100px;
+}
+
 .bulle:hover {
 	background-color : lightgray;
 	color : #181a72;
@@ -91,16 +97,92 @@
 	transform : translate(0,5px);
 }
 
+.bulle1:hover {
+	background-color : lightgray;
+	color : #181a72;
+	box-shadow : 0px 0px lightgray;
+}
 
-.droite
+.bulle1:active {
+	transform : translate(0,5px);
+}
+
+.bulle2:hover {
+	background-color : lightgray;
+	color : #181a72;
+	box-shadow : 0px 0px lightgray;
+}
+
+.bulle2:active {
+	transform : translate(0,5px);
+}
+
+.bulle1
+{
+	border: 2px solid lightgray;
+	padding: 30px;
+	border-radius: 50px;
+	font-size : 25px;
+	font-style: italic;
+	color : lightgray;
+	display: block;
+}
+
+.droite1 {
+	float : right;
+	margin-right : 10%;
+	margin-top : 3%;
+	width: 55%;
+	
+}
+
+.bulle2
+{
+	border: 2px solid lightgray;
+	padding: 30px;
+	border-radius: 50px;
+	font-size : 25px;
+	margin: 5px;
+	font-style: italic;
+	color : lightgray;
+	display: inline;
+}
+
+.client_formulaire
 {
 	float: right;
-	background-color: grey;
+	margin-right: -10%;
+	display: inline;
+	width: 400px;
+}
+
+.vente_formulaire
+{
+	float: left;
+	margin-left: -20%;
+		width: 400px;
+		display: inline;
+		text-align: center;
+		margin-top: 30px;
+}
+
+.stock_formulaire
+{
+	margin-top: 50%;
 	display: block;
-    flex-direction: row;
-    min-height: 100vh;
-    margin: -10px;
-    width: 80%;
+	margin-left: -20%
+}
+
+.test
+{
+	margin-top: 75px;
+}
+
+.droite {
+	float : right;
+	margin-right : 10%;
+	margin-top : 3%;
+
 }
 
 .titre {
@@ -186,6 +268,7 @@ img
     display: flex;
     margin: 20px;
 	padding-bottom : 50px;
+	margin-left : 25%;
 }
 
 .conteneur_menu {
@@ -436,20 +519,10 @@ img
 	display : inline-block;
 }
 
-table {
-	float : right;
-	table-layout: fixed;
-	width: 80%;
-	border-collapse: collapse;
-	border: 3px solid lightgray;
-  }
-
   #circle1 {
 	float : right;
 	width: 200px;
-	height: 200px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
+	height: 200px;	
 	border-radius: 50%;
 	background: rgba(0, 183, 255, 0.555);
 	margin-right : 60%;
@@ -464,12 +537,10 @@ table {
 	float : right;
 	width: 200px;
 	height: 200px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
 	border-radius: 50%;
 	background: rgba(0, 183, 255, 0.555);
-	margin-right : 20%;
-	margin-top : 0%;
+	margin-right : 25%;
+	margin-top : -5%;
 	text-align : center;
 	display : flex;
 	align-items : center;
@@ -480,12 +551,10 @@ table {
 	float : right;
 	width: 200px;
 	height: 200px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
 	border-radius: 50%;
 	background: rgba(0, 183, 255, 0.555);
-	margin-right : 20%;
-	margin-top : 15%;
+	margin-right : 15%;
+	margin-top : 5%;
 	text-align : center;
 	display : flex;
 	align-items : center;
@@ -497,3 +566,127 @@ table {
 	height : 50%;
 	font-size : 25px;
   }
+
+  .gaucheform {
+	float : left;
+	margin-top : 3%;
+	margin-left : 43%;
+  }
+
+  .catform {
+	color : white;
+  }
+
+  .input1
+{
+	display: inline;
+	margin: 10px;
+	width: 350px;
+	text-align: center;
+	background-color : lightgray;
+}
+
+
+.input2
+{
+	display: inline;
+	margin: 10px;
+	width: 350px;
+	text-align: center;
+	font-size: 10pt;
+	border : unset;
+}
+
+.submit {
+	margin-top : 50px;
+	background-color: transparent;
+
+}
+
+.fleche {
+	float : right;
+	min-height: 50vh;
+	background-color : black;
+	position : fixed;
+	margin-right : 0%;
+}
+
+@keyframes animation {
+	0% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+	99% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-1200%);
+		opacity: 1 ;
+	}
+}
+
+#droiteb span {
+	position: absolute;
+	bottom: -50px;
+	background: transparent;
+	border: 2px solid #E0FFFF;
+	border-radius: 50%;
+	margin-left: 25%;
+}
+
+.test2
+{
+	margin-left: 25%;
+	width: 1000px;
+	height: 600px;
+	text-align: center;
+
+}
+
+.unclient
+{
+	margin-left: 25%;
+	color: white;
+	border: 2px solid black;
+
+}
+
+.imgc
+{
+	width: 150px;
+	padding: 5px;
+	display: inline;
+	vertical-align: middle;
+	border-radius: 50%;
+
+}
+
+.inline
+{
+	display: inline;
+	padding: 5px 50px 5px 5px;
+
+}
+
+.droite
+{
+	float: right;
+	margin-right: 0px;
+}
+
+.centre
+{
+	display: inline;
+	margin-left: 14%
+
+}
+
+.milieu
+{
+	margin-left: 100px;
+}
+
+.milieu2
+{
+	margin-left: 100px;
+}
