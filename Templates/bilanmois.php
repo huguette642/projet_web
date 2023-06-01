@@ -21,7 +21,7 @@ include_once("libs/maLibForms.php");// mkTable, mkLiens, mkSelect ...
 
 <div id="affichage_stock">
 <h1 class="titre">Bilan Mensuel</h1>
-<header>
+<header style="text-align:center">
   <a href="index.php?view=bilan" style="text-decoration:none" class="bulle">Bilan Global</a>
   <a href="index.php?view=bilanannee" style="text-decoration:none" class="bulle">Bilan Annuel</a>
 </header>

@@ -22,16 +22,15 @@ session_start();
     switch($action)
     {
       // TODO
-      case 'stock' :
-        // Traitements métier...
-        $qs="?view=stock";
-      break;
-      
-      // TODO
-      case 'TODO2' :
-        // Traitements métier...
-      break;
-      
+      case 'ajout_paire':
+        if($nom_paire = valider("nom_paire"))
+        if($taille = valider("taille"))
+        if($retail_price = valider("retail_price"))
+        if($retail_date = valider("retail_date"))
+        {
+          insertStock($nom_paire,$taille,$retail_price,$retail_date);
+        }
+        break;
       
       
       

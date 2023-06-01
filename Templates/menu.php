@@ -33,11 +33,11 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 		<br>
 		<a href="index.php?view=ventes" style="text-decoration:none" class="bulle" id="ventes">Ventes</a>
 		<br>
-		<a href="index.php?view=client" style="text-decoration:none" class="bulle" id="client">Client</a>
+		<a href="index.php?view=client" style="text-decoration:none" class="bulle" id="client">Clients</a>
 		<br>
 		<a href="index.php?view=bilan" style="text-decoration:none" class="bulle" id="bilan">Bilan</a>
 		<br>
-		<a href="index.php?view=form" style="text-decoration:none" class="bulle" id="formulaire">Formulaire</a>
+		<a href="index.php?view=choix_form" style="text-decoration:none" class="bulle" id="formulaire">Formulaire</a>
 		<br>
 		<a href="index.php?view=expl" style="text-decoration:none" class="bulle" id="explication">Explications du SQL</a>
 		</div>
