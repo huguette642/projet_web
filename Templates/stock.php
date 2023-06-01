@@ -42,11 +42,9 @@ include_once("libs/maLibForms.php");// mkTable, mkLiens, mkSelect ...
     echo '<p>Taille : ' . $nextstock["Size"] .  '</p>';
     echo '<p>Retail Price : ' . $nextstock["Retail_price"] .  '</p>';
     echo '<p>Retail Date : ' . $nextstock["Retail_date"] .  '</p>';
-    mkForm("controleur.php");
-    mkInput('button','vendre','','class=boutonv');
-    mkInput('button','modifier','','class=boutono');
-    mkInput('button','supprimer','','class=boutonr');
-    endForm();
+    echo '<a href="index.php?view=form" style="text-decoration:none" class="boutonv"></a>';
+    echo '<a href="index.php?view=form" style="text-decoration:none" class="boutono"></a>';
+    echo '<a href="index.php?view=form" style="text-decoration:none" class="boutonr"></a>';
     echo '</div>';
     echo '</div>';
     $nb+=1;
