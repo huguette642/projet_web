@@ -1,66 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-    <link rel="stylesheet" href="page1.css" />
-    <script src="page1.js"></script>
-	<title>shoes'ig2i</title>
-</head>
-<body>
-
 <?php
+/*index.php 
+Fichier permettant d'afficher les différentes vues contenues dans le repertoire "templates"
+La vue à afficher est définie par le paramètre "view", inclus dans la chaîne de requête
+
+N.B. Les formulaires de toutes les vues générées enverront leurs données vers la page controleur.php pour traitement. 
+La page controleur.php redirigera alors vers la page index pour réafficher la vue pertinente, généralement la vue dans laquelle se trouvait le formulaire.
+*/
 session_start();
 
-/*
-Cette page génère les différentes vues de l'application en utilisant des templates situés dans le répertoire "templates". Un template ou 'gabarit' est un fichier php qui génère une partie de la structure XHTML d'une page. 
-
-La vue à afficher dans la page index est définie par le paramètre "view" qui doit être placé dans la chaîne de requête. En fonction de la valeur de ce paramètre, on doit vérifier que l'on a suffisamment de données pour inclure le template nécessaire, puis on appelle le template à l'aide de la fonction include
-
-Les formulaires de toutes les vues générées enverront leurs données vers la page data.php pour traitement. La page data.php redirigera alors vers la page index pour réafficher la vue pertinente, généralement la vue dans laquelle se trouvait le formulaire. 
-*/
+include_once "libs/maLibUtils.php"; //Fonction valider()
 
 
-	include_once "libs/maLibUtils.php";
+// NB : il faut que view soit défini avant d'appeler l'entête
+
+$view = valider("view"); // Récupération du paramètre view
+
+//Cas par défaut(vide) 
+if(!$view) $view=""; ////////////A CHANGER\\\\\\\\\\\\\\\
 
 
-
-	// on récupère le paramètre view éventuel 
-	$view = valider("view"); 
-	/* valider automatise le code suivant :
-	if (isset($_GET["view"]) && $_GET["view"]!="")
-	{
-		$view = $_GET["view"]
-	}*/
-
-	// S'il est vide, on charge la vue accueil par défaut
-	if (!$view) $view = "truc"; 
-
-	// NB : il faut que view soit défini avant d'appeler l'entête
-
-	// Dans tous les cas, on affiche l'entete, 
-	// qui contient les balises de structure de la page, le logo, etc. 
-	// Le formulaire de recherche ainsi que le lien de connexion 
-	// si l'utilisateur n'est pas connecté 
-
-	include("Templates/menu.php");
-
-	// En fonction de la vue à afficher, on appelle tel ou tel template
-	switch($view)
-	{		
-
-		default : // si le template correspondant à l'argument existe, on l'affiche
-			if (file_exists("Templates/$view.php"))
-				include("Templates/$view.php");
-			else
-			include("Templates/stock.php");
-
-	}
-
-		?>
+//Toute personne non connectée est redirigée vers la page de login
+// + message
+if(!valider("connecte","SESSION")){
+    $view = ""; //           ////////////A CHANGER C'EST LA VUE DE BASE\\\\\\\\\\\\\\\
+    //Création d'un message
+    //$_REQUEST["msg"]= "Il faut vous connecter";
+}
 
 
+//Inclusion du header "header.php" seulement pour les templates nécesssaires
+include("templates/header.php");
+include("templates/connexion.php");
+include("templates/barre.php");
+
+switch($view){
+    //METTRE LES DIFFERENTS CAS
 
 
+    //CAS PAR DEFAUT    
+    default : // si le template correspondant à l'argument existe, on l'affiche
+		// TODO : sinon on doit afficher une page par défaut 
+			/**if (file_exists("templates/$view.php"))
+				include("templates/$view.php");
+            else{
+                include("templates/CHANGERRRRRRRRRRRRRRRR.php");  ////////////A CHANGER \\\\\\\\\\\\\\\
+            }*/
+}
 
-
-
+?>
